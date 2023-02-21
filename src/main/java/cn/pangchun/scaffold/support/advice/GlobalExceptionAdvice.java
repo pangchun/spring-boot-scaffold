@@ -1,5 +1,9 @@
-package cn.pangchun.scaffold.support.exception;
+package cn.pangchun.scaffold.support.advice;
 
+import cn.pangchun.scaffold.support.exception.AuthorizationException;
+import cn.pangchun.scaffold.support.exception.BusinessException;
+import cn.pangchun.scaffold.support.exception.ParameterException;
+import cn.pangchun.scaffold.support.exception.ServerException;
 import cn.pangchun.scaffold.support.response.CodeEnum;
 import cn.pangchun.scaffold.support.response.CommonResponse;
 import org.apache.commons.logging.Log;

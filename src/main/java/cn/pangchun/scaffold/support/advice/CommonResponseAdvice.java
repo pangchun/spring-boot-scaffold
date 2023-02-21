@@ -1,5 +1,7 @@
-package cn.pangchun.scaffold.support.response;
+package cn.pangchun.scaffold.support.advice;
 
+import cn.pangchun.scaffold.support.response.CommonResponse;
+import cn.pangchun.scaffold.support.response.CommonResponseBody;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.http.MediaType;
