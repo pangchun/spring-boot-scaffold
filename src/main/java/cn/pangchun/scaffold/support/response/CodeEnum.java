@@ -19,19 +19,29 @@ public enum CodeEnum implements CodeType {
     FAIL(-1, "失败"),
 
     /**
-     * 未知
+     * 未知异常
      */
-    UNKNOWN(1000, "未知错误"),
+    UNKNOWN_EXCEPTION(1000, "未知异常"),
 
     /**
-     * 认证失败
+     * 业务异常
      */
-    UNAUTHORIZED(2000, "认证失败"),
+    BUSINESS_EXCEPTION(1001, "业务异常"),
 
     /**
-     * 没有权限
+     * 认证异常
      */
-    FORBIDDEN(3000, "没有权限"),
+    AUTHORIZATION_EXCEPTION(1002, "认证异常"),
+
+    /**
+     * 参数异常
+     */
+    PARAMETER_EXCEPTION(1003, "参数异常"),
+
+    /**
+     * 服务器异常
+     */
+    SERVER_EXCEPTION(1004, "服务器异常"),
 
     ;
 

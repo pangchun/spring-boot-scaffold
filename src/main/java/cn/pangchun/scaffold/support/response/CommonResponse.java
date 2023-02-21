@@ -34,12 +34,20 @@ public class CommonResponse<T> {
         this.data = data;
     }
 
+    public CommonResponse(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
     public CommonResponse(int code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
     }
 
+    public static <T> CommonResponse<T> ofSuccess() {
+        return new CommonResponse<>(CodeEnum.SUCCESS.code(), CodeEnum.SUCCESS.message());
+    }
     public static <T> CommonResponse<T> ofSuccess(T data) {
         return new CommonResponse<>(CodeEnum.SUCCESS.code(), CodeEnum.SUCCESS.message(), data);
     }
@@ -48,11 +56,15 @@ public class CommonResponse<T> {
         return new CommonResponse<>(CodeEnum.SUCCESS.code(), message, data);
     }
 
-    public static <T> CommonResponse<T> ofFail(T data) {
-        return new CommonResponse<>(CodeEnum.FAIL.code(), CodeEnum.FAIL.message(), data);
+    public static <T> CommonResponse<T> ofFail() {
+        return new CommonResponse<>(CodeEnum.FAIL.code(), CodeEnum.FAIL.message());
     }
 
-    public static <T> CommonResponse<T> ofFail(T data, String message) {
-        return new CommonResponse<>(CodeEnum.FAIL.code(), message, data);
+    public static <T> CommonResponse<T> ofFail(String message) {
+        return new CommonResponse<>(CodeEnum.FAIL.code(), message);
+    }
+
+    public static <T> CommonResponse<T> ofFail(int code, String message) {
+        return new CommonResponse<>(code, message);
     }
 }
