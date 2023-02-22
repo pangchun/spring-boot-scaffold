@@ -1,6 +1,6 @@
 package cn.pangchun.scaffold.enums;
 
-import cn.pangchun.scaffold.support.OptionItem;
+import cn.pangchun.scaffold.support.option.OptionItem;
 import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;

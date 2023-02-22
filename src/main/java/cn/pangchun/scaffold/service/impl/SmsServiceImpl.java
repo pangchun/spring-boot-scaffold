@@ -1,6 +1,6 @@
 package cn.pangchun.scaffold.service.impl;
 
-import cn.pangchun.scaffold.support.ValidatorUtil;
+import cn.pangchun.scaffold.support.util.ValidatorUtil;
 import cn.pangchun.scaffold.dto.Person;
 import cn.pangchun.scaffold.entity.Sms;
 import cn.pangchun.scaffold.mapper.SmsMapper;

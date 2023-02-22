@@ -1,4 +1,4 @@
-package cn.pangchun.scaffold.support;
+package cn.pangchun.scaffold.support.util;
 
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;

@@ -32,7 +32,7 @@ public class GlobalExceptionAdvice {
         String method = request.getMethod();
         String servletPath = request.getServletPath();
         // 输出日志
-        logger.error("方法名：" + method + "请求路径：" + servletPath);
+        logger.error("方法名：" + method + " 请求路径：" + servletPath);
         return CommonResponse.ofFail(CodeEnum.UNKNOWN_EXCEPTION.code(), CodeEnum.UNKNOWN_EXCEPTION.message());
     }
 
@@ -43,7 +43,7 @@ public class GlobalExceptionAdvice {
         String method = request.getMethod();
         String servletPath = request.getServletPath();
         // 输出日志
-        logger.error("方法类型：" + method + "请求路径：" + servletPath);
+        logger.error("方法类型：" + method + " 请求路径：" + servletPath);
         // 返回
         return CommonResponse.ofFail(CodeEnum.AUTHORIZATION_EXCEPTION.code(), e.getMessage());
     }
@@ -55,7 +55,7 @@ public class GlobalExceptionAdvice {
         String method = request.getMethod();
         String servletPath = request.getServletPath();
         // 输出日志
-        logger.error("方法类型：" + method + "请求路径：" + servletPath);
+        logger.error("方法类型：" + method + " 请求路径：" + servletPath);
         // 返回
         return CommonResponse.ofFail(CodeEnum.BUSINESS_EXCEPTION.code(), e.getMessage());
     }
@@ -67,7 +67,7 @@ public class GlobalExceptionAdvice {
         String method = request.getMethod();
         String servletPath = request.getServletPath();
         // 输出日志
-        logger.error("方法类型：" + method + "请求路径：" + servletPath);
+        logger.error("方法类型：" + method + " 请求路径：" + servletPath);
         // 返回
         return CommonResponse.ofFail(CodeEnum.PARAMETER_EXCEPTION.code(), e.getMessage());
     }
@@ -79,7 +79,7 @@ public class GlobalExceptionAdvice {
         String method = request.getMethod();
         String servletPath = request.getServletPath();
         // 输出日志
-        logger.error("方法类型：" + method + "请求路径：" + servletPath);
+        logger.error("方法类型：" + method + " 请求路径：" + servletPath);
         // 返回
         return CommonResponse.ofFail(CodeEnum.SERVER_EXCEPTION.code(), e.getMessage());
     }

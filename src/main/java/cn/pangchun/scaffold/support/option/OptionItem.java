@@ -1,4 +1,4 @@
-package cn.pangchun.scaffold.support;
+package cn.pangchun.scaffold.support.option;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
