@@ -12,3 +12,8 @@ spring:
 mybatis-plus:
   # 扫描枚举包，让mybatis-plus映射
   type-enums-package: cn.pangchun.scaffold.blog.enums
+
+# log4j2配置 (resource目录下)
+logging:
+  # 文件路径(注意冒号后没有空格)
+  config: classpath:log4j2.xml

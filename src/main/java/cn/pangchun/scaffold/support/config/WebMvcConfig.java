@@ -1,8 +1,10 @@
 package cn.pangchun.scaffold.support.config;
 
+import cn.pangchun.scaffold.support.interceptor.WebInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
@@ -25,5 +27,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
         // 0优先级最高
         converters.add(0, new MappingJackson2HttpMessageConverter());
+    }
+
+    /**
+     * 配置拦截器
+     * @param registry 注册器
+     */
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new WebInterceptor()).addPathPatterns("/**");
     }
 }
