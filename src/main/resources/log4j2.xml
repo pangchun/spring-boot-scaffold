@@ -33,6 +33,9 @@
         <Logger name="org.springframework" level="info" additivity="false">
             <AppenderRef ref="Console"/>
         </Logger>
+        <Logger name="springfox" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
         <!-- 根记录器 -->
         <root level="all">
             <appender-ref ref="Console"/>
