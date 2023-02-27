@@ -1,4 +1,4 @@
-package cn.pangchun.scaffold.oss.dto;
+package cn.pangchun.scaffold.blog.dto;
 
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;

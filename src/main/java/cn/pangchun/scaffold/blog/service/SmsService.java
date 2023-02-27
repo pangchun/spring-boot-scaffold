@@ -1,7 +1,7 @@
-package cn.pangchun.scaffold.oss.service;
+package cn.pangchun.scaffold.blog.service;
 
-import cn.pangchun.scaffold.oss.dto.Person;
-import cn.pangchun.scaffold.oss.entity.Sms;
+import cn.pangchun.scaffold.blog.dto.Person;
+import cn.pangchun.scaffold.blog.entity.Sms;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 public interface SmsService extends IService<Sms> {

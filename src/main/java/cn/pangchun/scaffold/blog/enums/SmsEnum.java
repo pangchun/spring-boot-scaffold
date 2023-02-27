@@ -1,4 +1,4 @@
-package cn.pangchun.scaffold.oss.enums;
+package cn.pangchun.scaffold.blog.enums;
 
 import cn.pangchun.scaffold.support.option.OptionItem;
 import com.baomidou.mybatisplus.annotation.EnumValue;

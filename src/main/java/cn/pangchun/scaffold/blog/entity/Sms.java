@@ -1,6 +1,6 @@
-package cn.pangchun.scaffold.oss.entity;
+package cn.pangchun.scaffold.blog.entity;
 
-import cn.pangchun.scaffold.oss.enums.SmsEnum;
+import cn.pangchun.scaffold.blog.enums.SmsEnum;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
