@@ -1,10 +1,10 @@
-package cn.pangchun.scaffold.service.impl;
+package cn.pangchun.scaffold.oss.service.impl;
 
 import cn.pangchun.scaffold.support.util.ValidatorUtil;
-import cn.pangchun.scaffold.dto.Person;
-import cn.pangchun.scaffold.entity.Sms;
-import cn.pangchun.scaffold.mapper.SmsMapper;
-import cn.pangchun.scaffold.service.SmsService;
+import cn.pangchun.scaffold.oss.dto.Person;
+import cn.pangchun.scaffold.oss.entity.Sms;
+import cn.pangchun.scaffold.oss.mapper.SmsMapper;
+import cn.pangchun.scaffold.oss.service.SmsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

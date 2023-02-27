@@ -1,7 +1,7 @@
 import cn.pangchun.scaffold.ScaffoldApplication;
-import cn.pangchun.scaffold.dto.Person;
-import cn.pangchun.scaffold.mapper.SmsMapper;
-import cn.pangchun.scaffold.service.SmsService;
+import cn.pangchun.scaffold.oss.dto.Person;
+import cn.pangchun.scaffold.oss.mapper.SmsMapper;
+import cn.pangchun.scaffold.oss.service.SmsService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

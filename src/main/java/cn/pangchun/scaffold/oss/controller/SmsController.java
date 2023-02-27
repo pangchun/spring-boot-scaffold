@@ -1,6 +1,6 @@
-package cn.pangchun.scaffold.controller;
+package cn.pangchun.scaffold.oss.controller;
 
-import cn.pangchun.scaffold.dto.Person;
+import cn.pangchun.scaffold.oss.dto.Person;
 import cn.pangchun.scaffold.support.response.CommonResponseBody;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
