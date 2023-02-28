@@ -17,7 +17,7 @@ public class BlogController {
     @ApiOperation("测试1")
     @PostMapping("/test")
     public String test(@RequestBody @Validated Person person) {
-        System.out.println(person);
+
         return "123456";
     }
 }
