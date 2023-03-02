@@ -1,5 +1,8 @@
 package cn.pangchun.scaffold.spider.service;
 
+import java.io.IOException;
+import java.util.List;
+
 /**
  * WallHavenService
  * 1、wallhaven.cc 图片爬取
@@ -9,5 +12,12 @@ package cn.pangchun.scaffold.spider.service;
  */
 public interface WallHavenService {
 
-    // void
+    /**
+     * 抓取首页的图片链接
+     *
+     * @return 原图url
+     * @throws IOException io异常
+     */
+    List<String> crawlHome() throws IOException;
+
 }

@@ -1,11 +1,13 @@
-import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.util.StrUtil;
 import cn.pangchun.scaffold.ScaffoldApplication;
 import cn.pangchun.scaffold.blog.mapper.SmsMapper;
 import cn.pangchun.scaffold.blog.service.SmsService;
 import cn.pangchun.scaffold.spider.WebDownloader;
+import cn.pangchun.scaffold.spider.constant.WallHavenConstants;
+import cn.pangchun.scaffold.spider.util.WallHavenUrlUtil;
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,15 +16,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.util.FileCopyUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ScaffoldApplication.class)
@@ -66,19 +66,30 @@ public class MyTest {
                 log.error(e.getMessage());
             }
         }
+
     }
 
     @Test
-    public void test1() throws IOException, InterruptedException {
-        WebDownloader t1 = new WebDownloader("https://th.wallhaven.cc/lg/kx/kx82d6.jpg", "C:\\Users\\pangchun\\Desktop\\project\\spring-boot-scaffold\\src\\main\\resources\\wallhaven\\1.png");
+    public void test1() throws InterruptedException {
+        WebDownloader t1 = new WebDownloader("https://th.wallhaven.cc/lg/kx/kx82d6.jpg", "C:\\Users\\Administrator\\Documents\\GitHub\\spring-boot-scaffold\\src\\main\\resources\\wallhaven\\1.png");
         t1.start();
 
-
-        // Thread.sleep(80000000);
+        // 单元测试中测试线程需要保持主线程在运行，否则会导致其它线程也随之关闭
+        Thread.sleep(80000000);
     }
 
     @Test
-    public void test2() {
-
+    public void test2() throws IOException {
+        Document doc = Jsoup.connect(WallHavenConstants.HOME_PAGE_URL).get();
+        Elements links = doc.select("img[src]");
+        List<String> originList = Lists.newArrayList();
+        for (Element link : links) {
+            String url = link.attr("abs:src");
+            String originUrl = WallHavenUrlUtil.transferUrl2OriginUrl(url);
+            if (StrUtil.isNotBlank(originUrl)) {
+                originList.add(originUrl);
+            }
+        }
+        System.out.println("originList = " + originList);
     }
 }

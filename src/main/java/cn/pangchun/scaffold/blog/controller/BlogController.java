@@ -26,4 +26,18 @@ public class BlogController {
         System.out.println(123);
         return "123456";
     }
+
+    @ApiOperation("测试2")
+    @GetMapping("/test2")
+    public String test2() {
+        System.out.println(321);
+
+        // 线程执行是异步的,可以监听线程结束后再返回
+        WebDownloader t1 = new WebDownloader("https://th.wallhaven.cc/lg/kx/kx82d6.jpg", "C:\\Users\\Administrator\\Documents\\GitHub\\spring-boot-scaffold\\src\\main\\resources\\wallhaven\\1.png");
+        t1.start();
+        System.out.println(123);
+        return "123456";
+    }
+
+
 }
