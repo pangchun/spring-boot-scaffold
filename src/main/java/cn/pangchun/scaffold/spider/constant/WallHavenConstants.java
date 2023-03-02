@@ -16,7 +16,7 @@ public class WallHavenConstants {
     /**
      * WallHaven主要存在四个页面供我们爬取图片,如下：
      * <p>
-     * 1、首页 = https://wallhaven.cc/
+     * 1、首页 = https://wallhaven.cc
      * 2、最近 = https://wallhaven.cc/latest
      * 3、热门 = https://wallhaven.cc/toplist
      * 4、随机 = https://wallhaven.cc/random

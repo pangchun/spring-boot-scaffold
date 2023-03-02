@@ -29,8 +29,14 @@ import java.util.List;
 public class WallHavenServiceImpl implements WallHavenService {
 
     @Override
-    public List<String> crawlHome() throws IOException {
-        Document doc = Jsoup.connect(WallHavenConstants.HOME_PAGE_URL).get();
+    public List<String> crawl(String pageUrl) {
+        Document doc;
+        try {
+            doc = Jsoup.connect(pageUrl).get();
+        } catch (IOException e) {
+            log.error("网页请求失败,未获取到html,当前请求地址 => {}, 错误信息 => {}", pageUrl, e.getMessage());
+            return null;
+        }
         Elements links = doc.select("img[src]");
         List<String> originList = Lists.newArrayList();
         for (Element link : links) {
@@ -41,5 +47,15 @@ public class WallHavenServiceImpl implements WallHavenService {
             }
         }
         return originList;
+    }
+
+    @Override
+    public List<String> crawlHome() {
+        return crawl(WallHavenConstants.HOME_PAGE_URL);
+    }
+
+    @Override
+    public List<String> crawlLatest() {
+        return crawl(WallHavenConstants.LATEST_PAGE_URL);
     }
 }

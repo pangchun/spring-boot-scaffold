@@ -13,11 +13,26 @@ import java.util.List;
 public interface WallHavenService {
 
     /**
-     * 抓取首页的图片链接
+     * 抓取图片链接
      *
+     * @param pageUrl wallhaven网页链接
      * @return 原图url
      * @throws IOException io异常
      */
-    List<String> crawlHome() throws IOException;
+    List<String> crawl(String pageUrl);
+
+    /**
+     * 抓取首页的图片链接
+     *
+     * @return 原图url
+     */
+    List<String> crawlHome();
+
+    /**
+     * 抓取最近的图片链接
+     *
+     * @return 原图url
+     */
+    List<String> crawlLatest();
 
 }
