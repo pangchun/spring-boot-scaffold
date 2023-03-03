@@ -17,7 +17,6 @@ public interface WallHavenService {
      *
      * @param pageUrl wallhaven网页链接
      * @return 原图url
-     * @throws IOException io异常
      */
     List<String> crawl(String pageUrl);
 

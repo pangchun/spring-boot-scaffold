@@ -24,10 +24,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
+/**
+ * SpiderTest java爬虫测试类
+ *
+ * @author pangchun
+ * @since 2023/3/3
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ScaffoldApplication.class)
 @Slf4j
-public class MyTest {
+public class SpiderTest {
 
     @Autowired
     private SmsMapper smsMapper;

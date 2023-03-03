@@ -6,17 +6,12 @@ import cn.pangchun.scaffold.spider.service.WallHavenService;
 import cn.pangchun.scaffold.spider.util.WallHavenUrlUtil;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
