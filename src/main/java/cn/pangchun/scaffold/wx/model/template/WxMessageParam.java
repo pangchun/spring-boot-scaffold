@@ -1,7 +1,8 @@
-package cn.pangchun.scaffold.wx.model;
+package cn.pangchun.scaffold.wx.model.template;
 
 import cn.pangchun.scaffold.wx.enums.MiniprogramStateEnum;
 import lombok.Data;
+import lombok.experimental.Accessors;
 import org.springframework.lang.Nullable;
 import org.springframework.validation.annotation.Validated;
 
@@ -17,6 +18,7 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 @Validated
+@Accessors(chain = true)
 public class WxMessageParam {
 
     /**
@@ -49,7 +51,7 @@ public class WxMessageParam {
      * {@link MiniprogramStateEnum}
      */
     @NotBlank(message = "miniprogramState不能为空")
-    private String miniprogramState = MiniprogramStateEnum.developer.name();
+    private String miniprogramState = MiniprogramStateEnum.formal.name();
 
     /**
      * 进入小程序查看”的语言类型，支持zh_CN(简体中文)、en_US(英文)、zh_HK(繁体中文)、zh_TW(繁体中文)，默认为zh_CN

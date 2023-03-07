@@ -17,3 +17,8 @@ mybatis-plus:
 logging:
   # 文件路径(注意冒号后没有空格)
   config: classpath:log4j2.xml
+
+# 小程序配置
+wx:
+  app-id: test
+  app-secret: test

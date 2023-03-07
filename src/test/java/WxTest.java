@@ -1,7 +1,13 @@
+import cn.hutool.core.util.ClassUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import cn.pangchun.scaffold.ScaffoldApplication;
+import cn.pangchun.scaffold.wx.model.template.WxMessageParam;
+import cn.pangchun.scaffold.wx.model.template.PaymentSuccessNotification;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.PropertyNamingStrategy;
+import com.alibaba.fastjson.serializer.SerializeConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +35,33 @@ public class WxTest {
         HttpRequest request = HttpUtil.createGet("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=************&secret=************");
         HttpResponse response = request.execute();
         System.out.println("response.body() = " + response.body());
+    }
+
+    /**
+     * bean转json
+     * 驼峰转下划线
+     */
+    @Test
+    public void bean2Json() {
+        PaymentSuccessNotification notification = new PaymentSuccessNotification();
+        notification.setCharacterString1("order123456")
+                .setDate2("2019年10月1日 15:01")
+                .setThing3("白色橱柜-大号-象牙纹")
+                .setThing4("微信支付")
+                .setAmount5("￥1888元");
+
+        WxMessageParam param = new WxMessageParam();
+        param.setTouser("张三")
+                .setTemplateId("fakeTempId")
+                .setPage("index?foo=bar")
+                .setData(notification);
+
+        SerializeConfig serializeConfig = new SerializeConfig();
+        serializeConfig.setPropertyNamingStrategy(PropertyNamingStrategy.SnakeCase);
+
+        String paramStr = JSON.toJSONString(param, serializeConfig);
+
+        System.out.println("paramStr = " + paramStr);
     }
 
 }
