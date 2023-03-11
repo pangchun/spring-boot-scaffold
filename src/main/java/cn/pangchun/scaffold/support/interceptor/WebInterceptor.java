@@ -21,7 +21,7 @@ public class WebInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        log.debug("当前请求链接:【{}】 请求方法:【{}】", request.getRequestURI(), request.getMethod());
+        log.info("当前请求链接:【{}】 请求方法:【{}】", request.getRequestURI(), request.getMethod());
         return true;
     }
 

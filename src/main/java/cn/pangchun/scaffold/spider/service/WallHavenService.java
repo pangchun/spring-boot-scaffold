@@ -1,6 +1,5 @@
 package cn.pangchun.scaffold.spider.service;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -30,8 +29,25 @@ public interface WallHavenService {
     /**
      * 抓取最近的图片链接
      *
+     * @param page 第几页
      * @return 原图url
      */
-    List<String> crawlLatest();
+    List<String> crawlLatest(Integer page);
+
+    /**
+     * 抓取热门的图片链接
+     *
+     * @param page 第几页
+     * @return 原图url
+     */
+    List<String> crawlTopList(Integer page);
+
+    /**
+     * 抓取随机的图片链接
+     *
+     * @param page 第几页
+     * @return 原图url
+     */
+    List<String> crawlRandom(Integer page);
 
 }

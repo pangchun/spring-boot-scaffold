@@ -1,9 +1,6 @@
 package cn.pangchun.scaffold.support.advice;
 
-import cn.pangchun.scaffold.support.exception.AuthorizationException;
-import cn.pangchun.scaffold.support.exception.BusinessException;
-import cn.pangchun.scaffold.support.exception.ParameterException;
-import cn.pangchun.scaffold.support.exception.ServerException;
+import cn.pangchun.scaffold.support.exception.*;
 import cn.pangchun.scaffold.support.response.CodeEnum;
 import cn.pangchun.scaffold.support.response.CommonResponse;
 import org.apache.commons.logging.Log;
@@ -82,5 +79,17 @@ public class GlobalExceptionAdvice {
         logger.error("方法类型：" + method + " 请求路径：" + servletPath);
         // 返回
         return CommonResponse.ofFail(CodeEnum.SERVER_EXCEPTION.code(), e.getMessage());
+    }
+
+    @ExceptionHandler(HttpException.class)
+    @ResponseBody
+    public CommonResponse<String> exceptionHandler(HttpException e, HttpServletRequest request) {
+        // 获取请求相关的参数
+        String method = request.getMethod();
+        String servletPath = request.getServletPath();
+        // 输出日志
+        logger.error("方法类型：" + method + " 请求路径：" + servletPath);
+        // 返回
+        return CommonResponse.ofFail(CodeEnum.HTTP_EXCEPTION.code(), e.getMessage());
     }
 }

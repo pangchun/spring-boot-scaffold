@@ -43,6 +43,11 @@ public enum CodeEnum implements CodeType {
      */
     SERVER_EXCEPTION(1004, "服务器异常"),
 
+    /**
+     * 网络异常
+     */
+    HTTP_EXCEPTION(1005, "网络异常"),
+
     ;
 
     private final int code;
